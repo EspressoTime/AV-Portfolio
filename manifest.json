@@ -1,6 +1,6 @@
 {
   "lang": "en",
-  "short_name": "Angela's Portfolio",
+  "short_name": "AV Portfolio",
   "name": "Angela Vasquez Portfolio",
   "description": "A showcase of my development projects. By Angela Vasquez.",
   "icons": [
@@ -15,7 +15,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/",
+  "start_url": "/index.html",
   "background_color": "#01a2b3",
   "display": "standalone",
   "theme_color": "#01a2b3"

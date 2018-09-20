@@ -1,0 +1,295 @@
+/*https://jsfiddle.net/zuzfvufz/15/
+  https://codepen.io/anon/pen/PddyEd */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  height: 100%;
+  background-image: url("../img/hypnotize.png");
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-color: #e7e7e7;
+  font-family: 'Noto Sans', sans-serif;
+  box-shadow: inset 0 0 0 1000px rgba(250, 250, 250, 0.5);
+  color: #232323;
+}
+
+h1, h2, h3 {
+  font-family: 'Fjalla One', sans-serif;
+  letter-spacing: 0.5px;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  color: #01a2b3;
+}
+
+p {
+  margin-bottom: 15px; 
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: #01a2b3;
+}
+
+.page { 
+    max-width: 1080px;
+    margin: auto;
+}
+
+.wrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    text-align: center;
+    flex: 1 100%;
+    min-height: 100%;
+    min-width: 100%;
+    padding-top: 40px;
+}
+
+.main {
+    padding: 1em;
+    flex: 1 100%;
+    order: 3;
+    font-size: 16px;
+}
+
+.aside-about {
+    flex: 1 100%;
+    order: 2;
+}
+
+.content {
+    text-align: center;
+    max-width: 15em;
+    margin: auto;
+}
+
+article {
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin-bottom: 75px;
+    padding: 20px;
+    border-radius: 5px;
+    border: solid 1px #eee;
+}
+
+.headshot-container {
+  position: relative;
+}
+.headshot-img {
+  border-radius: 50%;
+  margin-bottom: 20px;
+  width: 100%;
+  display: block;
+  box-shadow: 0px 4px 6px 2px lightgrey;
+}
+.headshot-hover {
+  box-shadow: 0px 4px 6px 2px lightgrey;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  opacity: 0;
+  transition: 350ms ease-in-out;
+}
+.headshot-hover:hover {
+  opacity: 1;
+}
+
+.proj-img {
+  max-width: 90%;
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  width: 35px;
+  margin-bottom: 10px;
+}
+
+.link-btn {
+  background-color: #01a2b3;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 0.3px;
+  line-height: 1.428571429;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+a.link-btn:hover {
+  background-color: #01a2c6;
+}
+
+.about-subheading {
+  color: #485f69;
+}
+
+.contact-form {
+    overflow-y: hidden;
+    max-height: 2px;
+    -webkit-transition: all .8s ease-in-out;
+    transition: all .8s ease-in-out;
+    height: inherit; 
+    width: inherit;
+    margin: 15px auto;
+    box-sizing: border-box;
+}
+#toggle {
+  display: none;
+}
+#toggle + label {
+  background-color: #01a2b3;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 0.3px;
+  line-height: 1.428571429;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+#toggle:checked ~ .form-wrapper > .contact-form {
+  max-height: 370px;
+}
+.form-list {
+  list-style-type: none;
+  padding: 0;
+  margin-left:; 15%;
+}
+.form-list li {
+  text-align: left;
+}
+.form-list > li > label {
+  display: block;
+}
+.form-list > li > input, textarea {
+  font-family: 'Noto Sans', sans-serif;
+  margin-bottom: 10px;
+  width: 75%;
+  font-size: 16px;
+  padding: 5px;
+}
+.link-btn.submit{
+  font-family: 'Fjalla One', sans-serif;
+  padding: 6px 12px;
+}
+
+.footer-wrapper {
+  background-color: #01a2b3;
+  text-align: center;
+  color: white;
+  padding: 25px;
+}
+.footertext {
+  display: inline-block;
+  padding: 0;
+}
+
+/*Tablet*/
+@media all and (min-width: 700px) {
+    .main {
+        padding: 10px;
+        flex: 1 100%;
+    }
+    article {
+      padding: 50px;
+    }
+    .aside-about {
+        padding: 10px;
+        flex: 1 100%;
+        font-size: 18px;
+        /*position: fixed;*/
+        height: 100%;
+    }
+}
+
+/*Desktop*/
+@media all and (min-width: 900px) {
+    .main {
+        padding: 10px;
+        flex: 1 60%;
+    }
+    .aside-about {
+        flex: 1 0 250px;
+        height: auto;
+    }
+    .content {
+        text-align: center;
+        font-size: 18px;
+        /*max-width: 10em;
+        margin-top: 6em;*
+        /*position: fixed;
+        left: 4em;*/
+        padding: 1em;
+    }
+    .content-wrapper{
+        position: fixed;
+    }
+}

@@ -1,0 +1,22 @@
+{
+  "lang": "en",
+  "short_name": "Angela's Portfolio",
+  "name": "Angela Vasquez Portfolio",
+  "description": "A showcase of my development projects. By Angela Vasquez.",
+  "icons": [
+    {
+      "src": "/images/RaylanIcon_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/RaylanIcon_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#01a2b3",
+  "display": "standalone",
+  "theme_color": "#01a2b3"
+}

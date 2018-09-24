@@ -5,12 +5,12 @@
   "description": "A showcase of my development projects. By Angela Vasquez.",
   "icons": [
     {
-      "src": "/images/RaylanIcon_192.png",
+      "src": "/img/RaylanIcon_192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/images/RaylanIcon_512.png",
+      "src": "/img/RaylanIcon_512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

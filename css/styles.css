@@ -178,50 +178,39 @@ a.link-btn:hover {
   color: #485f69;
 }
 
+.form-wrapper {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+}
 .contact-form {
-    overflow-y: hidden;
-    max-height: 2px;
-    -webkit-transition: all .8s ease-in-out;
-    transition: all .8s ease-in-out;
-    height: inherit; 
-    width: inherit;
-    margin: 15px auto;
-    box-sizing: border-box;
-}
-#toggle {
-  display: none;
-}
-#toggle + label {
-  background-color: #01a2b3;
-  color: white;
-  text-decoration: none;
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-family: 'Fjalla One', sans-serif;
-  font-size: 16px;
-  font-weight: normal;
-  letter-spacing: 0.3px;
-  line-height: 1.428571429;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
-#toggle:checked ~ .form-wrapper > .contact-form {
-  max-height: 370px;
+    position: fixed;
+    bottom: 0;
+    background-color: #e1eff1;
+    width: 100%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s;
+    box-shadow: inset 0 0 0 1000px rgba(250, 250, 250, 0.5);
 }
 .form-list {
   list-style-type: none;
-  padding: 0;
-  margin-left:; 15%;
+  padding: 25px;
+  width: 75%;
+  max-width: 700px;
+  margin: auto;
 }
 .form-list li {
   text-align: left;
@@ -232,13 +221,42 @@ a.link-btn:hover {
 .form-list > li > input, textarea {
   font-family: 'Noto Sans', sans-serif;
   margin-bottom: 10px;
-  width: 75%;
+  width: 100%;
   font-size: 16px;
   padding: 5px;
 }
 .link-btn.submit{
   font-family: 'Fjalla One', sans-serif;
   padding: 6px 12px;
+  margin-left: 5px;
+}
+.form-list li.close {
+    color: black;
+    text-align: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+@-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+}
+@keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+@-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
 }
 
 .footer-wrapper {
